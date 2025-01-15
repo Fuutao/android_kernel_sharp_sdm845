@@ -1013,6 +1013,11 @@ qpnp_pon_input_dispatch(struct qpnp_pon *pon, u32 pon_type)
 		input_sync(pon->pon_input);
 	}
 
+#ifdef CONFIG_SHARP_POWERKEY_PANIC
+	if (cfg->pon_type == PON_KPDPWR && key_status)
+		panic("Trigger by power key");
+#endif
+
 	input_report_key(pon->pon_input, cfg->key_code, key_status);
 	input_sync(pon->pon_input);
 

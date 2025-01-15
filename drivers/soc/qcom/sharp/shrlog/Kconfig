@@ -36,6 +36,13 @@ config SHARP_HANDLE_PANIC
 	help
 	  Enable SHARP handler for panic.
 
+config SHARP_POWERKEY_PANIC
+	bool "Enable SHARP power key panic."
+	depends on SHARP_HANDLE_PANIC
+	default n
+	help
+	  Press the power key to force a kernel panic.
+
 config SHARP_HANDLE_DLOAD
 	bool "Enable SHARP handler for dload."
 	depends on SHARP_SHLOG
