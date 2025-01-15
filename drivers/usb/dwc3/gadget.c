@@ -4052,7 +4052,6 @@ int dwc3_gadget_init(struct dwc3 *dwc)
 /*	dwc->gadget.l1_supported	= false;*/
 /* COORDINATOR Qualcomm_PostCS5 BUILDERR MODIFY end */
 	dwc->gadget.name		= "dwc3-gadget";
-	dwc->gadget.is_otg		= dwc->dr_mode == USB_DR_MODE_OTG;
 	dwc->gadget.l1_supported	= !dwc->usb2_l1_disable;
 
 	/*
